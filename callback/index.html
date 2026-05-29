@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Redirecting...</title></head>
+<body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const error = params.get('error');
+  if (code) {
+    window.location.href = 'vercel-mobile://auth/callback?code=' + code;
+  } else if (error) {
+    window.location.href = 'vercel-mobile://auth/callback?error=' + error;
+  }
+</script>
+<p>Redirecting back to the app...</p>
+</body>
+</html>
